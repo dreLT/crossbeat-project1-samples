@@ -34,9 +34,6 @@ $firstImage = first_image($body);
             // var_dump($recipe->instructions());
             ?>
           <li><span class="quantity"><?= $ingredient['amount']; ?></span><p><span class="unit"><?= $ingredient['unit']; ?></span> <span class="ingredient"><?= $ingredient['ingredient']; ?></span></p></li>
-          <!-- <li><span class="quantity">2</span><p><span class="unit">Tablespoon</span>&nbsp;<span class="ingredient">Olive Oil</span></p></li>
-          <li><span class="quantity">2</span><p><span class="unit">Tablespoon</span>&nbsp;<span class="ingredient">Olive Oil</span></p></li>
-          <li><span class="quantity">2</span><p><span class="unit">Tablespoon</span>&nbsp;<span class="ingredient">Olive Oil</span></p></li> -->
           <?php endforeach; ?>
         <?php endif; ?>
       </ul>
@@ -46,7 +43,6 @@ $firstImage = first_image($body);
         <div class="author-notes">
           <h2>AUTHOR NOTES</h2>
           <?php echo $recipe->notes(); ?>
-          <!-- <p>Such an easy way to make an avocado an entire meal!</p> -->
         </div>
       <?php endif; ?>
         <?php if($recipe->has_instructions()): ?>
@@ -56,8 +52,6 @@ $firstImage = first_image($body);
               <div class="direction">
                 <?= $instruction['description']; ?>
               </div>
-              <!-- <p>To 2 cups of cooked white beans (if you're using pre-cooked beans just make sure they're rinsed and patted dry), add 2 tablespoons of olive oil, 2 teaspoons of light-colored vinegar (white wine or champagne), 1 clove of grated or chopped garlic, the juice and zest from half a lemon, a big pinch of salt, and 1/3 cup chopped fresh herbs (any combination of mint, parsley, basil, or tarragon). Stir and taste.</p>
-              <p>The beans absorb all kinds of flavor so you’ll probably need to add more of everything. Toast 1 tablespoon pine nuts in the oven or on the stove top. Halve, pit, and peel an avocado. Fill an avocado half with an overflowing scoop of white bean salad. Top with coarse flaky salt, parsley, pine nuts, and additional lemon zest. Drizzle with olive oil. Eat as is or smear on a piece of grilled bread.</p> -->
           <?php endforeach; ?>
           </div>
           <div class="tags">

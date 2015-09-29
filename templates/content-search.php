@@ -83,10 +83,8 @@ if($performSearch){
 						<a class="join-button btn-action">JOIN GROUP</a>
 					</div>
 				</li>
-				<!-- There is a second treatment for this button in comp. Ask Tim which to use
-				<!-- <a class="view-more-results-button btn-action">VIEW MORE GROUPS RESULTS</a>
 			</ul>
-		</div>  -->
+		</div>
 		<div class="results-container">
 			<h3>RESULTS<span><?= $total_results; ?></span></h3>
 			<ul class="results-list results-list-recipes">

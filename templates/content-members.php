@@ -15,7 +15,6 @@ if (is_array($dealsCarousel) && count($dealsCarousel) == 1){
 <div id="members-wrapper">
 	<section class="nutrition-point1">
 		<div class="point-hero" style="background-image:url(<?= $mainHero->tiles[0]->image; ?>);">
-			<!-- <img class="hero-image" src="/wp-content/themes/toneitup/src/images/nutrition-plan-point1.png"> -->
 			<div class="hero-content">
 				<div class="tagline">
 					<p><span>ON SALE</span><br><span><?= $mainHero->tiles[0]->header ?></span><span>%</span> <span>OFF</span><span><?= $mainHero->tiles[0]->title ?></span></p>
@@ -87,32 +86,6 @@ if (is_array($dealsCarousel) && count($dealsCarousel) == 1){
 		<?php endwhile; ?>
 	</section>
 	<?php endif; ?>
-		<!-- <ul>
-			<li class="faq-item">
-				<div class="question-container">
-					<p><span>Q:</span>Lorem Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolor sit met Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolo.</p>
-				</div>
-				<div class="answer-container">
-					<p><span>A:</span>Lorem Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolor sit met Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolo.</p>
-				</div>
-			</li>
-			<li class="faq-item">
-				<div class="question-container">
-					<p><span>Q:</span>Lorem Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolor sit met Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolo.</p>
-				</div>
-				<div class="answer-container">
-					<p><span>A:</span>Lorem Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolor sit met Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolo.</p>
-				</div>
-			</li>
-			<li class="faq-item">
-				<div class="question-container">
-					<p><span>Q:</span>Lorem Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolor sit met Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolo.</p>
-				</div>
-				<div class="answer-container">
-					<p><span>A:</span>Lorem Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolor sit met Ipsum Dolor Sit Amet Lorem ipsum dolor sit amet lorem ipsum dolo.</p>
-				</div>
-			</li>
-		</ul> -->
 
 	<?php get_template_part('templates/partials/partial','nutrition-plan-promo'); ?>
 

@@ -48,56 +48,6 @@ function setActive($filterItem,$currentFilter){
 				</div>
 			</a>
 			<?php endwhile; ?>
-			<!-- <a class="grid-item">
-				<img src="/wp-content/themes/toneitup/src/images/success-story-pic3.png">
-				<div class="grid-item-overlay">
-					<div class="overlay-text-container">
-						<h2>Amanda</h2>
-						<span>San Francisco, CA</span><br>
-						<span>Joined in 2013</span>
-					</div>
-				</div>
-			</a>
-			<a class="grid-item">
-				<img src="/wp-content/themes/toneitup/src/images/success-story-pic3.png">
-				<div class="grid-item-overlay">
-					<div class="overlay-text-container">
-						<h2>Amanda</h2>
-						<span>San Francisco, CA</span><br>
-						<span>Joined in 2013</span>
-					</div>
-				</div>
-			</a>
-			<a class="grid-item">
-				<img src="/wp-content/themes/toneitup/src/images/success-story-pic3.png">
-				<div class="grid-item-overlay">
-					<div class="overlay-text-container">
-						<h2>Amanda</h2>
-						<span>San Francisco, CA</span><br>
-						<span>Joined in 2013</span>
-					</div>
-				</div>
-			</a>
-			<a class="grid-item">
-				<img src="/wp-content/themes/toneitup/src/images/success-story-pic3.png">
-				<div class="grid-item-overlay">
-					<div class="overlay-text-container">
-						<h2>Amanda</h2>
-						<span>San Francisco, CA</span><br>
-						<span>Joined in 2013</span>
-					</div>
-				</div>
-			</a>
-			<a class="grid-item">
-				<img src="/wp-content/themes/toneitup/src/images/success-story-pic3.png">
-				<div class="grid-item-overlay">
-					<div class="overlay-text-container">
-						<h2>Amanda</h2>
-						<span>San Francisco, CA</span><br>
-						<span>Joined in 2013</span>
-					</div>
-				</div>
-			</a> -->
 		</div>
 	</section>
 	

@@ -83,15 +83,11 @@ query_posts( array( 'post_type' => 'success-stories', 'showposts' => 8, 'orderby
 	<section class="success-stories">
 		<h2>HEAR OUR SUCCESS STORIES</h2>
 		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariaturirure dolor in reprehenderit in voluptate velit.</p>
-		<!-- <div class="background" style="background-image: url('<?= $testimonials->tiles[0]->image ?>');"> -->
 		<div class="background" style="background-image: url('<?= $testimonials->tiles[0]->image ?>');">
 			<div class="text-container">
 				<div class="background-name">MEET AMANDA</div>
 				<p class="background-quote">The best part about the Tone It Up Nutrition Plan was that by the third day I felt thinner, less bloated, more energy.</p>
 				<a href="<?= $testimonials->tiles[0]->link ?>" class="background-cta">HEAR HER SUCCESS STORY</a>
-				<!-- <div class="background-name"><?= $testimonials->tiles[0]->header ?></div>
-				<p class="background-quote"><?= $testimonials->tiles[0]->title ?></p>
-				<a href="<?= $testimonials->tiles[0]->link ?>" class="background-cta"><?= $testimonials->tiles[0]->footer ?></a> -->
 			</div>
 		</div>
 		<ul class="people-list">

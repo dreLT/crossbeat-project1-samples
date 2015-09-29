@@ -37,13 +37,6 @@
 	    <div class="swiper-button-prev left-arrow large"></div>
 	    <div class="swiper-button-next right-arrow large"></div>
 			
-			<!-- <div class="navigation">
-				<div class="nav-dots">
-					<span class="nav-dot"></span>
-					<span class="nav-dot"></span>
-					<span class="nav-dot"></span>	
-				</div>
-			</div> -->
 	</div>
 
 	<nav class="product-category-nav">

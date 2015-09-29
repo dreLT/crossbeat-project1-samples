@@ -99,41 +99,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- <section class="related-products card-carousel">
-		<heading>RELATED<br> PRODUCTS</heading>
-		<a class="card card1">
-			<div class="card-image" style="background-image: url('/wp-content/themes/toneitup/src/images/product4.png');"></div>
-			<div class="card-info-container">
-				<h1 class="title">Beach Babe 3</h1>
-				<span class="price">$37</span>
-			</div>
-		</a>
-		<a class="card card2">
-			<div class="card-image" style="background-image: url('/wp-content/themes/toneitup/src/images/product5.png');"></div>
-			<div class="card-info-container">
-				<h1 class="title">TIU Yoga Mat</h1>
-				<span class="price">$35</span>
-			</div>
-		</a>
-		<a class="card card3">
-			<div class="card-image" style="background-image: url('/wp-content/themes/toneitup/src/images/product6.png');"></div>
-			<div class="card-info-container">
-				<h1 class="title">Caveat in Fire</h1>
-				<span class="price">$100</span>
-			</div>
-		</a>
-		<div class="navigation">
-			<span class="left-arrow"></span>
-			<div class="nav-dots">
-				<span class="nav-dot"></span>
-				<span class="nav-dot"></span>
-				<span class="nav-dot"></span>
-				<span class="nav-dot"></span>
-				<span class="nav-dot"></span>
-			</div>
-			<span class="right-arrow"></span>
-		</div>
-	</section> -->
+	
 	<section class="product-reviews">
 		<p>REVIEWS<br><span class="reviews-count">2</span></p>
 		<ul>

@@ -1,0 +1,137 @@
+#connect-wrapper {
+	background-color: $background;
+	.connect-hero {
+		/*height: 568px;*/
+		.hero-image {
+			width: 100%;
+		}
+	}
+	.content-wrapper {
+		padding: 0 21.25%;
+		.connect-nav {
+			text-align: center;
+			background-color: $background;
+			margin-top: -57px;
+			z-index: 2;
+			position: relative;
+			h2 {
+				font-size: 48px;
+				margin-top: 13px;
+				margin-bottom: 35px;
+			}
+			ul {
+				margin-bottom: 48px;
+				li {
+					display: inline-block;
+					margin-right: 33px;
+					cursor: pointer;
+					height: 26px;
+					font-size: 12px;
+				}
+			}
+		}
+		.connect-intro {
+			text-align: center;
+			font-size: 16px;
+			margin-bottom: 41px;
+			p:first-of-type {
+				margin-bottom: 23px;
+			}
+		}
+		.customer-service, .press-inquiries, .careers {
+			text-align: center;
+			& > heading {
+				font-size: 20px;
+				margin-bottom: 10px;
+				display: inline-block;
+			}
+		}
+		.customer-service, .press-inquiries {
+			form {
+				background-color: #fff;
+				text-align: right;
+				padding: 4.3% 17% 2% 0;
+				margin-bottom: 36px;
+				input, textarea {
+					width: 44.2%;
+					padding: 8px 11px;
+					margin-bottom: 13px;
+					border: 1px solid $background;
+				}
+				input {
+					height: 33px;
+					font-size: 14px;
+				}
+				label {
+					color: $med-gray;
+					margin-right: 25px;
+					font-weight: normal;
+				}
+				label[for="message"] {
+					vertical-align: top;
+				}
+				input[type="submit"] {
+					background-color: #fff;
+					color: $turquoise;
+					border: 1px solid $turquoise;
+					width: 159px;
+					line-height: 1.5;
+					font-weight: normal;
+					margin-right: 24%;
+    				margin-top: 13px;
+				}
+				textarea {
+					margin-right: 0;
+					height: 138px;
+				}
+			}
+			form:last-of-type {
+				margin-bottom: 45px;
+			}
+		}
+		.careers {
+			text-align: center;
+			font-size: 16px;
+			.careers-image {
+				margin-bottom: 33px;
+			}
+			p:first-of-type {
+				margin-bottom: 38px;
+			}
+			.linkedin-image {
+				display: inline-block;
+			}
+		}
+		.signature-footer {
+			text-align: center;
+			margin-top: 78px;
+			/*.signature-image {
+				margin: 0 auto;
+			}*/
+			p:first-of-type {
+				font-size: 18px;
+				margin-top: 24px;
+				margin-bottom: 37px;
+			}
+			.logo-line {
+				display: inline-block;
+				margin-bottom: 19px;
+			}
+			.tagline {
+				font-size: 25px;
+				line-height: 1.1;
+				margin-bottom: 20px;	
+			}
+			.address {
+				font-size: 16px;
+				span {
+					border-right: 1px solid black;
+					padding: 0 20px;
+				}
+				span:last-child {
+					border: none;
+				}
+			}
+		}
+	}
+}

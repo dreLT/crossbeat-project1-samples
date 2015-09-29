@@ -1,0 +1,96 @@
+
+
+{% assign base_asset_url = "http://alpha.community.toneitup.com/wp-content/themes/toneitup/src/images/" %}
+
+<div id="shop-products-wrapper">
+
+	<div class="shop-main-carousel swiper-container shop-carousel-large" style="background-image: url({{ base_asset_url }}shop-hero-image2.png)">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="main-carousel-text-container">
+					<p class="headline">Ocean-kissed and<br> tousled beach waves</p>
+					<h2 class="title">K+K Sea Salt Texture Spray</h2>
+					<span class="price">$22</span>
+					<a class="cta">LEARN MORE</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="main-carousel-text-container">
+					<p class="headline">Ocean-kissed and<br> tousled beach waves</p>
+					<h2 class="title">K+K Sea Salt Texture Spray</h2>
+					<span class="price">$22</span>
+					<a class="cta">LEARN MORE</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="main-carousel-text-container">
+					<p class="headline">Ocean-kissed and<br> tousled beach waves</p>
+					<h2 class="title">K+K Sea Salt Texture Spray</h2>
+					<span class="price">$22</span>
+					<a class="cta">LEARN MORE</a>
+				</div>
+			</div>
+		</div>
+		<!-- If we need pagination -->
+	    <div class="swiper-pagination large"></div>
+	    
+	    <!-- If we need navigation buttons -->
+	    <div class="swiper-button-prev left-arrow large"></div>
+	    <div class="swiper-button-next right-arrow large"></div>
+			
+	</div>
+	<div class="products-nav-container">
+      {% include 'products-nav' %}
+      
+
+
+  {% assign products_per_page = settings.products_per_row | times: settings.number_of_rows %}
+  {% assign numbers = 'zero, one, two, three, four, five, six' | split: ',' %}
+  {% assign products_per_row = settings.products_per_row | times: 1 %}
+  {% assign products_per_row = numbers[products_per_row] | strip | append: '-per-row' %}
+
+  {% paginate collections by 3 %}
+
+
+	
+    <div class="row">
+<!--       <ul class="grid clearfix"> -->
+     {% for collection in collections%}
+        {% include 'collection-grid-item' with 'three-per-row' %}
+      {% else %}
+        <p>There are no products in this view.</p>
+      {% endfor %}
+<!--       </ul> -->
+     </div>
+      
+
+</div>
+
+
+
+
+{% comment %}
+  JavaScript for collection sorting.
+{% endcomment %}
+<script>
+jQuery('.sort-by')
+  .val('{{ collection.sort_by | default: collection.default_sort_by }}')
+  .on('change', function() {
+    Shopify.queryParams.sort_by = jQuery(this).val();
+    location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+\

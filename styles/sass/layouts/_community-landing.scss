@@ -1,0 +1,1009 @@
+#community-landing-wrapper {
+	.hero {
+		position: relative;
+		margin-bottom: 6.5vw;
+		.title-container {
+			width: auto;
+			img {
+				margin-bottom: -16px;
+				margin-right: 14px;
+				width: 19vw;
+			}
+			h1 {
+				color: #000;
+				font-size: 4.5vw;
+			}
+			p {
+				color: #333131;
+    			// font-size: 24px;
+    			font-family: $bold-font;
+    			margin-top: 4vw;
+    			font-size: 2.3vw;
+			}
+			.learn-more-button {
+				width: 182px;
+			    height: 42px;
+			    display: inline-block;
+			    margin-top: 1.65vw;
+			    font-size: 12px;
+			    line-height: 3;
+			    letter-spacing: 1px;
+			    text-decoration: none;
+			}
+		}
+		.stats {
+			width: 87.5%;
+		    margin: 0 auto;
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    height: 127px;
+		    color: #fff;
+		    .stat {
+		    	width: 20%;
+		    	float: left;
+		    	height: 100%;
+		    	text-align: center;
+		    	line-height: 0.8;
+		    	border-right: 1px solid #fff;
+		    	.number {
+		    		font-size: 80px;
+		    		font-family: $serif-font;
+					display: inline-block;
+					margin-bottom: 31px;
+		    	}
+		    	.k {
+					font-size: 36px;
+					font-family: $serif-font;
+					display: inline-block;
+					position: absolute;
+					top: 15px;
+				}
+		    	&:last-of-type {
+		    		border: none;
+		    	}
+		    }
+		}
+	}
+	h3 {
+		text-align: center;
+		font-size: 20px;
+		font-family: $bold-font;
+		position: relative;
+		margin-bottom: 2.6vw;
+		letter-spacing: 0.125em;
+		.view-all {
+			position: absolute;
+			font-size: 12px;
+			right: 8%;
+			bottom: 0;
+			color: $med-gray-alpha;
+			letter-spacing: 0;
+		}
+	}
+	.meetups-map {
+		margin-bottom: 2.55vw;
+	}
+	.popular-groups {
+		h3 {
+			margin-top: 4.6vw;
+		}
+	}
+	#community-landing-carousel-1, #community-landing-carousel-2 {
+		width: 87.5%;
+		margin: 0 auto;
+		height: auto;
+		.swiper-wrapper {
+			height: 300px;
+			.swiper-slide {
+				text-align: center;
+				color: #fff;
+				position: relative;
+				.meetup-info {
+					position: absolute;;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+					height: 100px;
+					width: 74%;
+					h4 {
+						font-size: 28px;
+						font-family: $serif-font;
+					}
+				}
+				.meetup-time-location, .member-count {
+					font-size: 13px;
+					position: absolute;
+					bottom: 19px;
+					left: 0;
+					right: 0;
+					font-family: $bold-font;
+					text-transform: uppercase;
+				}
+			}
+		}
+		.navigation {
+			width: 100%;
+			height: 63px;
+			text-align: center;
+			font-size: 30px;
+			clear: both;
+			padding-top: 15px;
+			.swiper-button-prev, .swiper-button-next {
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				display: inline-block;
+				border: 1px solid #000;
+				position: relative;
+				vertical-align: middle;
+				cursor: pointer;
+				margin-top: -43px;
+				&:before {
+					content: '';
+					background-repeat: no-repeat;
+					background-position: center center;
+					width: 24px;
+					height: 24px;
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+			}
+			.swiper-button-next {
+			    &:before {
+			    	content: '';
+			    	background-image: url(/wp-content/themes/toneitup/src/images/right-arrow.png);
+					position: absolute;
+					left: 0px;
+					top: -1px;
+			    }
+			}
+			.swiper-button-prev {
+				&:before {
+					content: '';
+			    	background-image: url(/wp-content/themes/toneitup/src/images/left-arrow.png);
+					position: absolute;
+					left: -2px;
+					top: -1px;
+				}
+			}
+			.swiper-pagination {
+				position: static;
+				display: inline-block;
+				margin: 0 13px;
+			}
+		}
+	}
+	#community-landing-carousel-1, #community-landing-carousel-2 {
+		.swiper-slide {
+			-webkit-transition: background-color 0.5s ease-in-out;
+			-moz-transition: background-color 0.5s ease-in-out;
+			-o-transition: background-color 0.5s ease-in-out;
+			-ms-transition: background-color 0.5s ease-in-out;
+			transition: background-color 0.5s ease-in-out;
+			background-color: transparent;
+		}
+		.swiper-slide:before {
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+			background-color: inherit;
+			content: ' ';
+		}
+	}
+	#community-landing-carousel-1 {
+		.swiper-slide:nth-of-type(even):hover {
+			background-color: $ocean;
+		}
+		.swiper-slide:nth-of-type(odd):hover {
+			background-color: $buttercup;
+		}
+	}
+	#community-landing-carousel-2 {
+		.swiper-slide:nth-of-type(3n+1):hover {
+			background-color: $ocean;
+		}
+		.swiper-slide:nth-of-type(3n+2):hover {
+			background-color: $buttercup;
+		}
+		.swiper-slide:nth-of-type(3n+3):hover {
+			background-color: $salmon;
+		}
+	}
+	.discover-groups-container {
+		width: 57.916666666667%;
+		margin: 0 auto;
+		margin-top: 5.5vw;
+		.discover-groups-nav {
+			position: relative;
+			margin-bottom: 1.9vw;
+			.group-category:last-of-type {
+				position: relative;
+				img {
+					right: -29px;
+					position: absolute;
+					top: 1px;
+				}
+			}
+			.sort-filter {
+			    position: absolute;
+				right: 0;
+				top: 0;
+				font-size: 12px;
+				font-family: $bold-font;
+				span:first-of-type {
+					margin-right: 11px;
+				}
+				.selectize-control {
+					width: 92px;
+					.selectize-input {
+						font-size: 12px;
+					}
+					.selectize-dropdown-content {
+						font-size: 12px;
+					}
+				}
+				/*.down-arrow {
+					position: static;
+					margin-left: 13px;
+					margin-bottom: 2px;
+				}*/
+			}
+		}
+		.results-list {
+			.result-item {
+				width: auto;
+			}
+		}
+	}
+}
+
+// Create Event
+
+.css-event-form {
+	margin-top: 36px;
+	#event-form {
+		h3 {
+			margin-bottom: 19px;
+			font-size: 20px;
+		}
+		.inside {
+			background-color: #fff;
+			padding: 6%;
+			text-align: center;
+			margin-bottom: 48px;
+			input {
+				float: none;
+				display: inline-block;
+			}
+		}
+		.em-event-text, .em-recurring-text, .event-recurring-label, .all-day-check, .event-to-spacing {
+		    font-size: 12px;
+		    font-family: BoldSans;
+		    text-transform: uppercase;
+		    color: rgb(155, 155, 155);
+		}
+		.event-recurring-label, .all-day-check {
+			margin-right: 15px;
+		}
+		.em-location-data-nolocation {
+			p {
+				font-size: 12px;
+			    font-family: BoldSans;
+			    text-transform: uppercase;
+			    color: rgb(155, 155, 155) !important;
+			    input {
+		    		margin-right: 14px;
+		    	}
+			}
+		}
+		.event-form-name {
+			#event-name {
+				text-align: center;
+				// border: none;
+				font-size: 20px;	
+			}
+			.event-name-subtext {
+				font-style: italic;
+				color: rgba(0,0,0,0.3);
+			    margin-top: 8px;
+			    display: inline-block;
+			}
+			em {
+				@extend .event-name-subtext;
+				margin-top: 4px;
+			}
+			select {
+				margin-bottom: 11px;
+			}
+		}
+		.event-form-when {
+			padding: 1%;
+			p {
+				min-height: 0 !important;
+    			padding: 10px 0;
+			}
+			.em-time-range {
+				padding-bottom: 27px;
+			}
+			.em-time-allday {
+				margin-left: 12px;
+			}
+			.em-event-text, .event-to-spacing, .em-recurring-text {
+				display: inline-block;
+				margin-bottom: 15px;
+				text-align: right;
+				margin-right: 18px;
+				width: 100px;
+			}
+			.em-date-range {
+				.em-event-text {
+				    width: 67px;
+				}
+			}
+			.recurring-data {
+				width: 400px !important;
+				text-align: center;
+				p {
+					color: $med-gray !important;
+				}
+				#recurrence-interval {
+					margin-bottom: -29px;
+				}
+			}
+			// .em-event-text.date-to-spacing {
+			// 	width: 63px;
+			// }
+		}
+		.event-form-where {
+			// height: 620px;
+			table {
+				width: 320px;
+				margin: 0 auto;
+				display: block;
+				float: none;
+				tr {
+					float: left;
+					margin-bottom: 15px;
+				}
+				.em-location-data-name {
+					position: relative;
+    				margin-bottom: 32px;
+    				#em-location-search-tip {
+					    position: absolute;
+						width: 471px;
+						left: -162px;
+						text-align: left;
+						font-size: 12px;
+						color: $med-gray-alpha;
+    				}
+				}
+				.em-location-data-name, .em-location-data-address, .em-location-data-town, .em-location-data-state, .em-location-data-postcode, .em-location-data-region, .em-location-data-country {
+					width: 160px;
+					padding-top: 0;
+					input {
+						border: none;
+					}
+				}
+				.create-titles {
+					clear: left;
+					width: 160px;
+					text-align: left;
+					font-size: 12px;
+				    font-family: BoldSans;
+				    text-transform: uppercase;
+				    color: rgb(155, 155, 155);				    
+				}
+			}
+			.em-location-map-container {
+				width: 100%;
+			}
+		}
+		.event-form-details {
+			background-color: transparent;
+			padding: 0;
+			#wp-em-editor-content-wrap {
+				margin-top: -47px;
+			}
+			.wp-editor-tabs {
+				margin-top: 48px;
+			}
+		}
+		.event-form-image {
+			padding: 3%;
+			.event-image-img {
+				padding: 0;
+			}
+			label {
+				font-size: 12px;
+			    font-family: BoldSans;
+			    text-transform: uppercase;
+			    color: rgb(155, 155, 155);
+			    margin-left: 96px;
+			}
+			input {
+				margin-left: 40px;
+			}
+		}
+		.event-form-bookings {
+			padding: 2.5%;
+			margin-bottom: 16px;
+			#event-rsvp-box {
+				font-size: 12px;
+			    font-family: BoldSans;
+			    text-transform: uppercase;
+			    color: rgb(155, 155, 155);
+			}
+			#em-tickets-form {
+				& > p {
+					color: rgba(0,0,0,.3) !important;
+					padding-top: 0;
+				}
+				.form-table {
+					width: 100%;
+					@media (max-width: 475px) {
+						font-size: 12px;
+					}				
+					td {
+						padding-right: 2%;
+						width: 14%;
+					}
+				}
+			}
+			#em-booking-options {
+				label {
+					display: block;
+				}		
+				em {
+					color: rgba(0,0,0,.3) !important;
+					margin-top: 12px;
+					display: block;
+				}
+			}
+		}
+		.submit {
+			background-color: transparent !important;
+		    text-align: center;
+		    padding-top: 10px;
+		    input {
+				float: none !important;
+				display: inline-block;
+		    }
+		}
+	}
+}
+
+// Profile Events Landing
+
+body.my-account.events {
+	h3 {
+		display: none;
+	}
+	#subnav {
+		ul {
+			margin-bottom: 20px !important;
+		}
+	}
+}
+
+body.events.profile {
+	h3 {
+		margin-top: 26px;
+    	margin-bottom: 16px;
+	}
+	h4 {
+		margin-top: 32px;
+		margin-bottom: 14px;
+	}
+	.statusnotice {
+		background-color: transparent !important;
+		p {
+			background-color: transparent !important;
+			text-align: center;
+			padding: 0 !important;
+		    margin: 0 !important;
+		    height: auto !important;
+		    min-height: 0 !important;
+		}
+	}
+	.em-events-list {
+	    background-color: #fff;
+		padding: 30px 30px 13px 36px;
+		li {
+			font-size: 16px;
+    		margin-bottom: 20px;
+    		// ul li a {
+    		// 	font-size: 14px;
+    		// }
+		}
+	}
+}
+
+// Profile My Events
+
+body.my-account.events.my-events {
+	.css-events-admin {
+		a {
+			border-radius: 30px;
+		}
+		.subsubsub {
+			margin-left: 2.5%;
+		}
+	}
+	.events-table-container {	
+		background-color: #fff;
+		padding: 2% 5%;
+		// padding: 26px 0 26px 46px;    
+		.events-table {
+			width: 100%;
+			background-color: #fff;
+			font-size: 16px;
+			tr {
+				height: 75px;
+				td {
+					padding: 0 13px 13px 0;
+					.trash {
+						font-size: 14px;
+					}
+					&:nth-of-type(2) {
+						width: 30px;
+					}
+				}
+			}
+			thead {
+				tr {
+					height: 42px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 600px) {
+	.bp-user {
+		#buddypress {
+			.css-events-admin {
+				a {
+					float: none;
+				    width: 228px;
+				    margin: 0 auto !important;
+				    margin-bottom: 18px !important;
+				}
+				.subsubsub {
+					width: 241px;
+					margin: 0 auto;
+				}
+				.search-box {
+					text-align: center;
+					float: none;
+					#post-search-input {
+						float: none;
+					}
+					input[type=submit] {
+						width: 175px;
+					    margin: 0 auto !important;
+					    margin-top: 12px !important;
+					    // margin-left: 0 !important;
+					    float: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Profile My Locations
+
+body.my-account.events.my-locations {
+	.css-locations-admin {
+		margin-top: 0 !important;
+		.add-new-h2 {
+			margin-top: 0 !important;
+			border-radius: 30px;
+		}
+		#locations-filter {
+			.subsubsub {
+				float: left;
+				padding-top: 10px;
+				margin-left: 2.5%;
+			}
+			.tablenav {
+				overflow: hidden;
+				select {
+					margin-top: 7px;
+				}
+				input {
+					margin: 0 20px;
+				}
+			}
+			p {
+				clear: both;
+			}
+			.locations-filter-table-container {
+				padding: 4% 5%;
+				background-color: #fff;
+				margin-top: 12px;
+				table {
+					background-color: #fff;
+					width: 100%;
+					font-size: 16px;
+					td {
+						width: 1%;
+						padding: 10px 0;
+					}
+					tfoot {
+						tr {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.bp-user {
+		#buddypress {
+			.css-locations-admin {
+				& > a {
+					float: none;
+				    width: 228px;
+				    margin: 0 auto !important;
+				    margin-bottom: 18px !important;
+				}
+				#locations-filter {
+					.subsubsub {
+						width: 241px;
+						margin: 0 auto;
+						float: none;
+						text-align: center;
+					}
+					.tablenav {
+						text-align: center;
+						select {
+							float: none;
+							display: block;
+							margin: 13px auto;
+						}
+						input {
+							float: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 472px) {
+	body.my-account.events.my-locations {
+		.css-locations-admin {
+			#locations-filter {
+				.locations-filter-table-container {
+					table {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Profile My Recent Bookings
+
+body.my-account.events.my-bookings {
+	.css-bookings-admin {
+		.tablenav {
+			overflow: hidden;
+			width: 736px;
+			margin: 0 auto;
+			margin-bottom: 12px;
+			.actions {
+				float: none;
+				margin: 0 auto;
+				#post-query-submit {
+					margin: 0 35px 0 27px !important;
+					display: inline-block;
+					float: none;
+				}
+			}
+		}
+		.em-bookings-table, .em_bookings_events_table {
+			.table-wrap {
+				margin-top: 12px;
+				table {
+					font-size: 16px;
+					margin: 0 auto;
+					width: 96%;
+					thead {
+						th {
+							padding-right: 2%;
+							padding-bottom: 2%;
+						}
+					}
+					tbody {
+						td {
+							padding-right: 2%;
+							padding-bottom: 2%;
+							width: 1%;
+							&:last-of-type {
+								a {
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	body.my-account.events.my-bookings {
+		.css-bookings-admin {
+			.tablenav {
+				width: 100%;
+				.actions {
+					.export-trigger-container {
+						width: 100px;
+						margin: 0 auto;
+						text-align: center;
+						margin-bottom: 10px;
+						a {
+							display: inline-block;
+						}
+					}
+					select, #post-query-submit {
+						display: block !important;
+						margin: 0 auto !important;
+						margin-bottom: 16px !important;
+						float: none;
+					}
+					.em-bookings-table-export, .em-bookings-table-settings {
+						float: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	body.my-account.events.my-bookings {
+		.css-bookings-admin {
+			.em-bookings-table {
+				.table-wrap {
+					table {
+						font-size: 8px;
+					}
+				}
+			}
+			.em_bookings_events_table {
+				.table-wrap {
+					table {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Profile Events I'm Attending
+
+body.my-account.events.attending {
+	.css-my-bookings {
+		.em-my-bookings {
+			.table-wrap {
+				#dbem-bookings-table {
+					font-size: 16px;
+					margin: 0 auto;
+					width: 94%;
+					td {
+						padding: 2.5% 0;
+						width: 24%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Profile Events Mobile
+
+@media (max-width: 400px) {
+	body.my-account.events.attending {
+		.css-my-bookings {
+			.em-my-bookings {
+				.table-wrap {
+					#dbem-bookings-table {
+						font-size: 13px;
+						td {
+							&:nth-of-type(3) {
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	body.my-account.events.my-events {
+		.events-table-container {	
+			.events-table {
+				font-size: 13px;
+			}
+		}
+	}
+}
+
+// Add Location Form
+
+body.my-account.events.my-locations {
+	.css-location-form {
+		background-color: #fff;
+		padding: 4%;
+		text-align: center;
+		color: $med-gray;
+		#location-name {
+			margin-bottom: 10px;
+			float: none;
+		}
+		.em-location-data-maps-tip {
+			color: $med-gray !important;
+		}
+		#em-location-data {
+			table.em-location-data {
+				margin: 0 auto;
+				float: none;
+				th {
+					text-transform: uppercase;
+					font-size: 12px;
+					font-family: $bold-font;
+					vertical-align: middle;
+					text-align: right;
+					padding-bottom: 12px;
+					padding-top: 5px;
+				}
+				td {
+					input {
+						margin-left: 19%;
+					}
+					i {
+						position: absolute;
+					}
+				}
+				select {
+					width: 164px;
+					margin-left: 6%;
+					float: left;
+				}
+			}
+			.em-location-map-container {
+				margin-top: 14px;
+				float: none;
+				width: 100%;
+			}
+		}
+		.wp-editor-tabs {
+			margin-top: 44px;
+		}
+		label[for="location_image"] {
+			margin-right: 20px;
+    		margin-left: 116px;
+		}
+		#location-image {
+			float: none;
+			display: inline-block;
+		}
+		.submit {
+			text-align: center;
+			.button-primary {
+				float: none !important;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media (max-width: 613px) {
+	body.my-account.events.my-locations {
+		.css-location-form {
+			label[for="location_image"] {
+				width: 100%;
+				margin: 0 0 10px 0;
+			}
+			#location-image {
+				width: 178px;
+			}
+		}
+	}
+}
+
+// Groups - Group Events
+
+body.bp-user.my-groups.group-events {
+	#buddypress {
+		.group-events-table-container {	
+			background-color: #fff;
+			padding: 2% 5%;
+			// padding: 26px 0 26px 46px;    
+			.events-table {
+				width: 100%;
+				background-color: #fff;
+				font-size: 16px;
+				tr {
+					height: 75px;
+					td {
+						padding: 0 13px 13px 0;
+						.trash {
+							font-size: 14px;
+						}
+						&:nth-of-type(2) {
+							width: 30px;
+						}
+					}
+				}
+				thead {
+					tr {
+						height: 42px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Mobile
+
+// @media (max-width: 767px) {
+// 	#community-landing-wrapper {
+// 	.hero {
+// 		.title-container {
+// 			img {
+				
+// 			}
+// 			h1 {
+// 				font-size: 35px;
+//     			margin-bottom: 1px;
+// 			}
+// 			p {
+			
+// 			}
+// 			.learn-more-button {
+			
+// 			}
+// 		}
+// 		.stats {
+			
+// 		    .stat {
+		    	
+// 		    	.number {
+		    		
+// 		    	}
+// 		    	.k {
+					
+// 				}
+// 		    	&:last-of-type {
+		    		
+// 		    	}
+// 		    }
+// 		}
+// 	}	
+// }
+
+@media (max-width: 400px) {
+	.create-event-dropdown .selectize-control.single .selectize-input {
+		width: 138px;
+	}
+	.css-event-form #event-form .event-form-where table .em-location-data-name #em-location-search-tip {
+		width: 200px;
+		font-size: 12px;
+		top: 18px;
+	}
+}

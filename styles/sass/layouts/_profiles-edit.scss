@@ -1,0 +1,205 @@
+body.my-profile {
+	.capture_grid_block {
+		.account-info-heading {
+			font-size: 20px;
+			margin-bottom: 18px;
+			margin-top: 51px;
+		}
+	}
+	.janrain-capture-ui div[class^="capture_col"] {
+		float: none;
+	    margin: 0;
+	    width: 100%;
+	    background-color: #fff;
+	}
+	.capture_col_4 {
+		text-align: center;
+		padding: 32px;
+		margin-bottom: 64px;
+		& > h3 {
+			display: inline-block !important;
+			text-align: left;
+			width: 90px;
+			text-align: right;
+			margin-right: 40px!important;
+			font-size: 12px;
+			color: #9b9b9b !important;
+			font-family: "BoldSans";
+			text-transform: uppercase;
+		}
+		.contentBoxWhiteShadow {
+			display: inline-block !important;
+			width: 123px;
+			.capture_upload_photo_link, #capture_editProfile_linkedAccounts_linknewlink, a {
+				font-size: 12px;
+				font-family: $main-font;
+			}
+			#capture_editProfile_photoManager_profile_pic {
+				// background-image: url(/wp-content/themes/toneitup/assets/images/blank-profile-image.png);
+				background-image: url(//www.gravatar.com/avatar/0ee8e68ee7db60ff1fd56e3b7e0180da?d=mm&s=150&r=G);
+    			border-radius: 50%;
+			}
+			#capture_editProfile_photoManager {
+				ul.options {
+					margin-bottom: -17px;
+				}
+			}
+		}
+	}
+	.capture_col_8 {
+		padding: 25px 0;
+		.capture_center_col {
+			margin: 0 auto;
+			.capture_editCol {
+				margin: 0 auto;
+				width: 396px;
+			}
+		}
+	}
+	#capture_editProfile_resendLink {
+		margin-left: 134px;
+		font-family: $main-font;
+	}
+	.janrain-capture-ui#editProfile {
+		#capture_editProfile_form_item_birthdate {
+			label {
+				display: block;
+				float: left;
+				height: 100px;
+			}
+			span {
+				display: inline-block;
+				select {
+					width: 80px;
+					margin-right: 7px;
+				}
+			}
+		}
+		#capture_editProfile_form_item_addressState, #capture_editProfile_form_item_addressCountry {
+			span {
+				display: inline-block;
+				select {
+					width: 260px;
+				}
+			}
+		}
+		#capture_editProfile_emailAddress {
+			width: 260px;
+		}
+		#capture_editProfile_form_item_optIn {
+			#capture_editProfile_form_item_inner_optIn {
+				margin: 17px 0;
+				background-color: transparent;
+				background-image: none;
+    			padding-right: 0;
+				label {
+					width: auto;
+				    margin-right: 0!important;
+				    float: right;
+				    input {
+				    	margin-left: 44px;
+				    }
+				}
+			}
+		}
+		.capture_form_item {
+			overflow: hidden;
+			margin-bottom: 7px;
+			label {
+				text-align: left;
+				display: inline-block;
+				width: 90px;
+				text-align: right;
+				margin-right: 40px !important;
+				font-size: 12px;
+				color: $med-gray;
+				font-family: $bold-font;
+				text-transform: uppercase;
+			}
+			input {
+				float: none;
+				display: inline-block;
+				width: 260px;
+				background-color: transparent;
+				border: none;
+				box-shadow: none;
+				font-size: 14px;
+				color: #000;
+				font-family: $main-font;
+				padding-bottom: 7px;
+			}
+			.capture_btn {
+				clear: both;
+			    float: none;
+			    display: block;
+			    max-width: 200px!important;
+			    min-width: 175px!important;
+			    width: 200px!important;
+			    height: 34px!important;
+			    line-height: 34px!important;
+			    font-family: "BoldSans";
+			    background: #FFF!important;
+			    text-transform: uppercase;
+			    border: solid #02C6D8 1px!important;
+			    color: #02C6D8!important;
+			    border-radius: 26px!important;
+			    -moz-border-radius: 26px!important;
+			    -webkit-border-radius: 26px!important;
+			    text-align: center;
+			    opacity: 1!important;
+			    margin: 5px 0 0 5px!important;
+			    padding: 2px 10px 0 10px!important;
+			    text-shadow: none;
+			    margin: 0 auto !important;
+			    font-size: 13px;
+			    &:hover {
+					color: #FFF!important;
+					background: #019FAE!important;
+					border: none;
+			    }
+			}
+		}
+	}
+	#capture_editProfile_gender {
+		width: 260px;
+		margin-left: 0;
+		font-family: $main-font;
+		text-transform: capitalize;
+	}
+}
+
+// Mobile
+
+@media (max-width: 438px) {
+	#buddypress .standard-form select {
+		width: 40vw !important;
+	}
+	body.profile-edit .janrain-capture-ui#editProfile #capture_editProfile_form_item_optIn #capture_editProfile_form_item_inner_optIn label {
+		width: 52vw;
+	    margin-right: 110px!important;
+	}
+	#capture_editProfile_form_item_optIn + .capture_form_item {
+		text-align: center !important;
+	}
+}
+
+@media (max-width: 465px) {
+	body.my-profile .janrain-capture-ui#editProfile #capture_editProfile_form_item_addressCountry span select, 
+	body.my-profile .janrain-capture-ui#editProfile #capture_editProfile_form_item_addressState span select,
+	body.my-profile .janrain-capture-ui#editProfile #capture_editProfile_form_item_gender span select {
+		width: 41vw;
+	}
+	body.my-profile .janrain-capture-ui#editProfile #capture_editProfile_form_item_birthdate span {
+		display: block;
+		select {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+	body.my-profile .janrain-capture-ui#editProfile #capture_editProfile_form_item_optIn #capture_editProfile_form_item_inner_optIn label {
+		width: 207px;
+		float: left;
+		margin-left: 74px;
+		text-align: left;
+	}
+}

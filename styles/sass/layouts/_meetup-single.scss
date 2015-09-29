@@ -1,0 +1,225 @@
+#meetup-single-wrapper, #meetup-single-location-wrapper {
+	.hero {
+		height: 40vw;
+		min-height: 237px;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-position: center;
+	}
+	.content-wrapper {
+		.meetup-header {
+			width: 741px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 2;
+			margin-top: -66px;
+			background-color: $background;
+			text-align: center;
+			.meetup-nav {
+				margin-bottom: 20px;
+				ul {
+					padding-top: 18px;
+					li {
+						display: inline-block;
+						font-family: $bold-font;
+						margin-right: 25px;
+						font-size: 12px;
+						&:last-of-type {
+							margin-right: 0;
+						}
+						-webkit-transition: color .4s ease;
+					    -o-transition: color .4s ease;
+					    transition: color .4s ease;
+					    cursor: pointer;
+						&:hover {
+							color: $turquoise;
+							&:after {
+								opacity: 1;
+							}
+						}
+						&:after {
+							@include nav-hover-arrow;
+						}
+					}
+				}
+			}
+			.meetup-details {
+				h2 {
+					font-size: 42px;
+					font-family: $serif-font;
+					width: 69%;
+					margin: 22px auto 23px;
+					line-height: 1.2;
+				}
+				span {
+					font-size: 12px;
+					font-family: $bold-font;
+					color: rgba(0, 0, 0, 0.3);
+				}
+				.location {
+					position: relative;
+					.geo-marker-icon {
+					    background-image: url(/wp-content/themes/toneitup/assets/images/geo-marker.png);
+					    width: 8px;
+					    height: 15px;
+					    position: absolute;
+					    left: -14px;
+					    background-repeat: no-repeat;
+					    top: -1px;
+					    cursor: pointer;
+					}
+				}
+			}
+		}
+		.join-meetup-button {
+			margin: 0 auto;
+		    display: block;
+		    width: 252px;
+		    background-color: transparent;
+		    border: 1px solid $turquoise;
+		    color: $turquoise;
+		    margin-top: 24px;
+		    text-decoration: none;
+		    margin-bottom: 4.3vw;
+		}
+		.meetup-suggestion {
+			position: relative;
+		    width: 910px;
+		    margin: 0 auto;
+		    text-align: center;
+			overflow: hidden;
+			margin-bottom: 40px;
+			& > p {
+				font-family: $bold-font;
+				color: $med-gray;
+				font-size: 20px;
+				letter-spacing: 2px;
+				margin-bottom: 17px;
+				a {
+					position: absolute;
+					font-size: 12px;
+					right: 0;
+					top: 7px;
+					letter-spacing: 0;
+					color: $med-gray;
+    				text-decoration: none;
+				}
+			}
+			.suggestion-thumb, .suggestion-info {
+				height: 300px;
+				width: 50%;
+				float: left;
+			}
+			.suggestion-thumb {
+				background-size: cover;
+				background-position: center;
+			}
+			.suggestion-info {
+				background-color: $salmon;
+				padding: 25px;
+				color: #fff;
+				position: relative;
+				.attending {
+					font-size: 13px;
+				}
+				h3 {
+					font-family: $serif-font;
+					font-size: 36px;
+					width: 77%;
+					margin: 60px auto 67px;
+				}
+				.suggestion-details {
+					position: absolute;
+					margin: 0;
+					right: 0;
+					bottom: 12px;
+					left: 0;
+				}
+				.icon img {
+				    position: absolute;
+				    left: -4%;
+				    top: 53%;
+				}
+			}
+		}
+	}
+}
+
+// Meetup Location Page
+
+#meetup-single-location-wrapper {
+	.meetup-full-details-container {
+		width: 87.430555555556%;
+		margin: 0 auto;
+		background-color: #fff;
+		margin: 0 auto;
+    	text-align: center;
+		.meetup-description {
+			margin: 0 auto;
+		    text-align: center;
+		    padding-top: 56px;
+		    position: relative;
+		    height: 245px;
+		    font-size: 12px;
+		    width: 693px;
+
+		    .meetup-url {
+				font-size: 18px;
+				color: $turquoise;
+				position: absolute;
+				margin: auto;
+				right: 0;
+				bottom: 42px;
+				left: 0;
+		    }
+		}
+		.columns {
+			width: 845px;
+			margin: 0 auto;
+			.organizers-column, .rsvps-column {
+				width: 50%;
+				float: left;
+			}
+			.organizers-column {
+				.group-organizer, .host-group-organizer {
+					overflow: hidden;
+					.organizer-img {
+						width: 150px;
+					    height: 150px;
+					    background-color: black;
+					    display: block;
+					    border-radius: 50%;
+					    float: left;
+					}
+					.organizer-info {
+						span {
+							display: inline-block;
+						}
+						span:first-of-type {
+							font-size: 12px;
+							font-family: $bold-font;
+						}
+						.name {
+							font-size: 24px;
+							font-family: $serif-font;
+							color: $turquoise;
+						}
+						.location, .member-count {
+							font-size: 12px;
+							font-family: $bold-font;
+							color: $med-gray-alpha;
+						}
+					}
+				}
+			}
+			.organizers-column, .rsvps-column {
+				h3 {
+					font-size: 20px;
+					font-family: $bold-font;
+					letter-spacing: 2px;
+					margin-bottom: 44px;	
+				}
+			}
+		}
+	}
+}

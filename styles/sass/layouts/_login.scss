@@ -1,0 +1,533 @@
+#SignInOverlay {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,.5);
+    top: 0px;
+    z-index: 100000;
+
+    p {
+        color: $white !important;
+        font-family: $main-font !important;
+    }
+
+    .close-btn {
+        position: absolute;
+        z-index: 9999;
+        top: 40px;
+        right: 40px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    .model_box {
+        background-color: $turquoise;
+        display: block;
+        position: fixed;
+        /*width: 74%;*/
+        width: 947px;
+        /*height: 80%; */
+        height: 527px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        border-radius: 10px !important;
+        -moz-border-radius: 10px !important;
+        -webkit-border-radius: 10px !important;
+        
+        
+    }
+    .inner {
+        height: 100%;
+        overflow:auto;
+    }
+    
+    label {
+        display:none;
+        max-width: inherit;
+        margin-bottom: 5px;
+        // font-weight: 500;
+        // text-transform: uppercase;
+        // font-family: $bold-font;
+        color: #fff;
+    }
+    
+    form {
+        height: 100%;
+        .capture_form_item {
+            width: 60%;
+            margin: 0 auto;
+            margin-bottom: 17px;
+        }
+    }
+    .janrain-capture-ui.capture-ui-content {
+        width: 94%;
+    }
+    .capture_header h1, {
+        margin: 1.5% 0 0 0;
+        color: $white;
+        font-size: 36px;
+    }
+    h2, {
+        font-family: $main-font;
+        margin: 10px 0 10px 0;
+        color: $white !important;
+        font-size: 14px;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 13px;
+    }
+    .janrainHeader {
+        color: $white !important;
+        background-color: $turquoise !important;
+        margin: 0px 0 10px 0;
+    }
+    .janrainPage ul {
+        // margin: 0 0 0 39px !important;
+    }
+    .janrain-capture-ui .capture_backgroundColor {
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        border-radius: 0 0 0 0!important;
+        padding: 0px 10% 0px 10% !important;
+        background-color: $turquoise !important;
+        border: none !important;
+        color: $white !important;
+        margin-top: 0;
+    }
+    .janrain-capture-ui {
+        .capture-select {
+            background-position: 100% -34px;
+        }
+        .login_widget {
+            min-height: 0px;
+            // width: 26% !important;
+            text-align: center !important;
+            // margin: -11px 37% 0 37%;
+            .janrainHeader {
+                display: none;
+            }
+            #janrainProviderPages {
+                position: static !important;
+                width: 100% !important;
+                overflow: hidden;
+                ul {
+                    margin-left: 0;
+                    li {
+                        float: none !important;
+                        display: inline-block;
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .janrainContent {
+        background-color: $turquoise !important;
+        border: solid $turquoise 1px!important;
+        width: auto !important;
+    }
+    .janrain-capture-ui .capture_text_input, .janrain-capture-ui .capture_checkbox, .janrain-capture-ui .capture_radio, .janrain-capture-ui .capture_inputPlaceholder, .janrain-capture-ui .capture_select, .janrain-capture-ui .capture_textarea {
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        color: $white !important;
+        border: none;
+        font-family: $main-font;
+        background-color: $turquoise;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+        padding: 1px 5px;
+        font-size: 14px;
+    }
+    .janrain-capture-ui a, .janrain-capture-ui a:visited, .janrain-capture-ui a:link {
+        font-family: $bold-font;
+        // color: $turquoise;
+        color: $white;
+    }
+    .capture_rightText {
+        text-align: center;
+        /*width: 66%;*/
+        width: 100%;
+        margin: 0 auto;
+        h3 {
+            margin-bottom: 0;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .janrain-capture-ui .capture_primary, .janrain-capture-ui a.capture_primary, .janrain-capture-ui button.capture_primary, .janrain-capture-ui input.capture_primary {
+        text-shadow: 0px 0px 0px rgba(0,0,0,0) !important;
+    }
+    .janrain-capture-ui button.capture_secondary, .janrain-capture-ui .capture_footer .capture_btn {
+        max-width: 200px!important;
+        min-width: 175px!important;
+        line-height: 34px!important;
+        font-family: $bold-font !important;;
+        font-size: 0.88785714285714em;
+        background: $white;
+        text-transform: uppercase;
+        border: solid $turquoise 1px !important;
+        color: $turquoise !important;
+        border-radius: 26px!important;
+        -moz-border-radius: 26px!important;
+        -webkit-border-radius: 26px!important;
+        text-align: center;
+        opacity: 1 !important;
+        margin: 15px 10px 0px 0px!important;
+        padding: 4px 10px 0px 10px !important;
+        border-width: 0 0 0 0;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+
+        &:hover {
+            color: $white !important;
+            background: $dark-turquoise !important;
+            border: solid $turquoise 1px !important;
+            border-width: 0 0 0 0;
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        }
+    }
+    .janrain-capture-ui .capture_secondary {
+        max-width: 200px!important;
+        min-width: 175px!important;
+        line-height: 34px!important;
+        font-family: $bold-font;
+        font-size: 0.88785714285714em;
+        background: $turquoise;
+        text-transform: uppercase;
+        border: solid $white 1px !important;
+        color: $white !important;
+        border-radius: 26px!important;
+        -moz-border-radius: 26px!important;
+        -webkit-border-radius: 26px!important;
+        text-align: center;
+        opacity: 1 !important;
+        margin: 15px 10px 13px 0px!important;
+        padding: 4px 10px 0px 10px !important;
+        border-width: 0 0 0 0;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+
+        &:hover {
+            color: $turquoise !important;
+            background: $white !important;
+            border: solid $turquoise 1px !important;
+            border-width: 0 0 0 0;
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        }
+    }
+    .janrain-capture-ui .capture_secondary a {
+        font-family: $bold-font !important;
+    }
+    .janrain-icon-key:before {
+        content: none;
+    }
+    .capture_createAccountButton::before {
+        content: none;
+    }
+    .capture_form_item a {
+        font-family: $bold-font !important;
+        color: $white !important;
+        float: left;
+        width: 100%;
+        text-align: left;
+    }
+    .serviceMarks {
+        color: $white;
+        float: right;
+    }
+    .capture_backgroundColor .capture_signin {
+        text-align: left;
+        & > h2 {
+            width: 60%;
+            margin: 0 auto;
+            margin-bottom: 7px;
+            text-align: center;
+        }
+    }
+    input {
+        color: $white !important;
+        // font-family: $bold-font !important;
+    }
+    ::-webkit-input-placeholder {
+       color: rgba(255, 255, 255, 0.5);
+       text-transform: capitalize;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: rgba(255, 255, 255, 0.5);
+       text-transform: capitalize;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: rgba(255, 255, 255, 0.5);
+       text-transform: capitalize;
+    }
+
+    :-ms-input-placeholder {  
+       color: rgba(255, 255, 255, 0.5);
+       text-transform: capitalize;
+    }
+    .capture_form_item a {
+        position: absolute;
+        top: -46px; 
+        right: -14px;
+        width: 150px;
+    }
+    .learn-more {
+        font-family: $bold-font;
+    }
+    .janrain-capture-ui .capture_form_item .capture_tip_error {
+        color: $soft-black !important;
+        font-family: $bold-font !important;
+        position: absolute;
+        top: 29px;
+        left: 0;
+        text-align: left;
+    }
+    .janrain-capture-ui .capture_footer {
+        
+        background: transparent;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        border: none;
+        position:inherit;
+    }
+    .capture_left, .capture_right {
+       margin-top: 20px;
+    }
+    .janrain-capture-ui .capture_footer .capture_btn {
+        border: solid red 1px;
+    }
+    
+    #capture_traditionalRegistration_form_item_inner_optIn label, 
+    #capture_traditionalRegistration_form_item_inner_acceptTerms label
+    {
+        display:inline;
+    }
+
+    h1.almost-done {
+        margin: 1% 0 0 0 !important;
+    }
+
+    .capture_footer {
+        text-align: center;
+        .capture_left, .capture_right {
+            display: inline-block;
+            float: none;
+            margin-top: 0;
+            input {
+                margin: 0;
+            }
+            #capture_traditionalRegistration_backButton {
+                padding-top: 0 !important;
+                .janrain-icon-back::before {
+                    content: 'BACK';
+                    font-family: $bold-font;
+                    font-size: 12px;
+                }
+            }
+        }
+        .capture_right {
+            input {
+                margin-right: 0 !important;
+            }
+        }
+    }
+
+    #forgotPasswordSuccess {
+        p {
+            margin-top: 22px;
+        }
+    }
+
+    #capture_signIn_signInForm {
+        .capture_form_error {
+            text-align: center;
+            color: #000;
+            font-family: $main-font;
+            margin-bottom: 4px;
+        }
+        .capture_form_item {
+            .capture_text_input {
+                background-image: none;
+            }
+        }
+    }
+    #capture_forgotPassword_forgotPasswordForm {
+        margin-top: 45px;
+        #capture_forgotPassword_backButton {
+            padding-top: 0 !important;
+            span:before {
+                content: 'BACK';
+                font-family: $bold-font;
+                font-size: 12px;
+            }
+        }
+    }
+
+    #emailVerificationNotification {
+        h1 {
+            margin-bottom: 22px;
+        }
+    }
+
+    #traditionalRegistration {
+        & > p {
+            margin: 9px 0 19px 0;
+            a {
+                font-family: $bold-font;
+            }
+        }
+        #capture_traditionalRegistration_registrationForm {
+            .capture_form_item {
+                margin-bottom: 24px;
+            }
+            .registration-fields {
+                margin-bottom: 16px;   
+                .left-column {
+                    display: inline-block;
+                    margin-right: 23px;
+                }
+                .right-column {
+                    display: inline-block;
+                    margin: 0;
+                }
+                .left-column, .right-column {
+                    width: 250px;
+                    .capture_form_item {
+                        width: 100%;
+                    }
+                }
+                #capture_traditionalRegistration_addressState {
+                    color: rgba(255, 255, 255, 0.5) !important;
+                }
+            }
+            #capture_traditionalRegistration_form_item_addressState {
+                .capture_select {
+                    background-position: 100% -34px;
+                }
+            }
+            #capture_traditionalRegistration_form_item_optIn, #capture_traditionalRegistration_form_item_acceptTerms {
+                text-align: left;
+                #capture_traditionalRegistration_form_item_inner_optIn, #capture_traditionalRegistration_form_item_inner_acceptTerms {
+                    padding-left: 12px;
+                    border-bottom: none;
+                    background-image: none;
+                    label input {
+                        left: -17px;
+                    }
+                    label {
+                        padding-left: 0;
+                        font-family: $main-font;
+                        font-size: 12px;
+                    }
+                }
+            }
+            #capture_traditionalRegistration_form_item_acceptTerms {
+                margin-bottom: 0;
+                .capture_tip_error {
+                    top: 41px;
+                    left: 6px;
+                }
+            }
+            #capture_traditionalRegistration_form_item_optIn {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+// Mobile - Sign in Form
+
+@media (max-width: 991px) {
+    #SignInOverlay .model_box {
+        width: 95.57vw;
+    }
+    #SignInOverlay .janrain-capture-ui .capture_backgroundColor {
+        padding: 0 !important;
+    }
+    #SignInOverlay form#capture_signIn_signInForm .capture_form_item {
+        width: 267px;
+        &#capture_signIn_form_item_currentPassword {
+            margin-bottom: 10px;
+        }
+    }
+    #SignInOverlay .capture_form_item.forgotPassword {
+        height: 5px;
+        margin-top: 18px;
+        padding-left: 5px;
+        a {
+            position: relative;
+            top: initial;
+            right: initial;
+            width: auto;
+        }
+    }
+    #SignInOverlay .capture_header h1 {
+        font-size: 31px;
+    }
+    #SignInOverlay {
+        h2 {
+            font-size: 13px;
+        }
+        h3 {
+            font-size: 22px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    #SignInOverlay .janrain-capture-ui .capture_checkbox, #SignInOverlay .janrain-capture-ui .capture_inputPlaceholder, #SignInOverlay .janrain-capture-ui .capture_radio, #SignInOverlay .janrain-capture-ui .capture_select, #SignInOverlay .janrain-capture-ui .capture_text_input, #SignInOverlay .janrain-capture-ui .capture_textarea {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 492px) {
+    #SignInOverlay .close-btn {
+        top: 11px;
+        right: 15px;
+    }
+}
+
+// Mobile - Registration Form
+
+@media (max-width: 991px) {
+    #SignInOverlay {
+        #capture_traditionalRegistration_registrationForm {
+            .left-column {
+                margin: 0;
+            }
+            #capture_traditionalRegistration_form_item_optIn, #capture_traditionalRegistration_form_item_acceptTerms {
+                label {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 585px) {
+    #SignInOverlay {
+        .model_box {
+            // height: 100%;
+        }
+        #capture_traditionalRegistration_registrationForm {
+            .left-column {
+                margin-right: 0 !important;
+            }
+            #capture_traditionalRegistration_form_item_optIn, #capture_traditionalRegistration_form_item_acceptTerms {
+                label {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+// Shop Header Navigation
+
+.store-nav-container {
+	nav {
+		background-color: #F9F9F9;
+		height: 60px;
+		ul {
+			text-align: center;
+			li {
+				display: inline-block;
+				font-size: 14px;
+				margin-right: 4%;
+				color: $soft-black;
+				&:hover {
+					a {
+						color: $turquoise;
+					}
+				}
+				a {
+					padding: 22px 15px;
+					color: $med-gray;
+				}
+				a:hover {
+					background-color: transparent;
+				}
+			}
+			li.show-on-small {
+				display: none;
+			}
+		}
+	}
+}
+
+.template-product, .template-index, .template-cart, .template-customers-login, .template-collection {
+	#nav-top-right {
+		margin-right: 0;
+	}
+}
+
+
+
+#tiu-stage, #products, .template-product {
+	.container {
+		padding: 0;
+	}
+}
+
+.template-product, .template-index {
+	background-color: #fff;
+	padding-bottom: 2%;
+}
+
+// Product Detail
+
+.template-product {
+	label {
+		margin-bottom: 3px;
+	}
+	input[name="quantity"] {
+		width: 29px;
+		margin-left: 30px;
+		border: none;
+	}
+}
+
+.product-details .primary-details .spr-badge-starrating {
+	.spr-icon-star, .spr-icon-star-empty {
+		font-size: 154% ;
+		color: #FC6A5F;
+	}
+}
+
+// Collections
+
+.template-collection {
+	
+}
+
+// Hide .prod-caption div on landing page
+
+.template-index .prod-caption {
+	display: none;
+}
+

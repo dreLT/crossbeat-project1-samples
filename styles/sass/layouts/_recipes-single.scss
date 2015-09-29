@@ -1,0 +1,67 @@
+body.single-recipe {
+	.header.fixed {
+		position: fixed;
+		top: 245px;
+		// top: 0;
+		z-index: 2;
+	}
+	.body {
+		background-color: transparent;
+		font-size: 18px;
+		position: relative;
+		z-index: 3;
+		h2 {
+			font-size: 13px;
+			color: $med-gray;
+			margin-bottom: 16px;
+		}
+		.ingredients-column {
+			float: left;
+			width: 32%;
+			margin-right: 1.9%;
+			background-color: #fff;
+			padding: 1.8% 4%;
+			.ingredient-list {
+				li {
+					.quantity {
+						font-weight: bold;
+						position: absolute;
+						width: 25px;
+						text-align: center;
+					}
+					p {
+						padding-left: 54px;
+					}
+				}
+			}
+		}
+		.details-column {
+			float: left;
+			width: 66.1%;
+			background-color: #fff;
+			.author-notes, .directions {
+				line-height: 1.7;
+			}
+			.author-notes {
+				line-height: 1.7;
+				margin-bottom: 45px;
+				p:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+			.directions {
+				margin-bottom: 45px;
+				.direction {
+					margin-bottom: 27px;
+				}
+			}
+			p {
+				line-height: 1.7;
+				margin-bottom: 30px;
+			}
+		}
+		.ingredients-column, .details-column {
+			padding: 2% 4%;
+		}
+	}
+}

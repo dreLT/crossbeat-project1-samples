@@ -1,0 +1,224 @@
+{% assign add_to_cart = 'Add to cart' %}
+{% assign sold_out = 'Sold Out' %}
+{% assign unavailable = 'Unavailable' %}
+{% assign base_asset_url = "http://alpha.community.toneitup.com/wp-content/themes/toneitup/src/images/" %}
+
+<div id="shop-product-detail-wrapper" class="product" itemscope itemtype="http://schema.org/Product">
+  
+  <section class="product-container">
+  
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+    <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
+
+    <form action="/cart/add" method="post" enctype="multipart/form-data">
+
+      <div class="product-images">
+
+      {% if product.images.size == 0 %}
+
+        <div class="product-photo-container primary-image column-1">
+          <img src="{{ '' | img_url: 'grande' }}" alt="" />
+        </div>
+
+      {% else %}
+
+        {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+        <div class="product-photo-container primary-image column-1" style="background-image: url('{{ featured_image | img_url: 'large' }}'); {% if product.images.size == 1 %}float: none; margin: 0 auto;{% endif %}">
+        </div>
+        
+		{% if product.images.size > 1 %}
+        <div class="secondary-images column-2">
+                  {% for image in product.images %}
+          <div class="secondary-image" style="background-image: url('{{ image | img_url: "large" }}');"></div>
+          			          {% endfor %}
+		</div>
+        {% endif %}
+
+      {% endif %}
+
+      </div><!-- .product-photos -->
+
+      <div class="product-details">
+		
+        <div class="primary-details">				
+                <nav class="breadcrumb product-location" role="navigation" aria-label="breadcrumbs">
+                  <a href="/" title="Home">Home</a>
+                  {% if template contains 'product' %}
+                    {% if collection.url %}
+                      <span class="slash-divider" aria-hidden="true">/</span>
+                      {{ collection.title | link_to: collection.url }}
+                    {% endif %}
+                    <span class="slash-divider" aria-hidden="true">/</span>
+                    <span>{{ product.title }}</span>
+                  {% endif %}
+                </nav>
+                <h1 class="name" itemprop="name">{{ product.title }}</h1>
+          		<div class="price" id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="delta">
+                  <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+                  {% if product.available %}
+                  <link itemprop="availability" href="http://schema.org/InStock" />
+                  {% else %}
+                  <link itemprop="availability" href="http://schema.org/OutOfStock" />
+                  {% endif %}
+                  <p>
+                    {% assign variant = product.selected_or_first_available_variant %}
+                    {% if product.compare_at_price > product.price %}
+                    <span class="product-price on-sale" itemprop="price">{{ variant.price | money }}</span>
+                    <s class="product-compare-price">{{ variant.compare_at_price | money }}</s>
+                    {% else %}
+                    <span class="product-price" itemprop="price">{{ variant.price | money }}</span>
+                    {% endif %}
+                  </p>
+		        </div>
+	            <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+			</div>
+			<div class="secondary-details">
+              
+                <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
+                  <select id="product-select" name="id">
+                    {% for variant in product.variants %}
+                    <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
+                      {{ variant.title }}
+                    </option>
+                    {% endfor %}
+                  </select>
+                </div>
+                                     
+               	<a class="size-help">NEED HELP WITH<br> SIZE?</a>
+
+                <div class="quantity">
+					<label for="quantity">QTY</label>
+                	<input type="number" pattern="[0-9]*" name="quantity" class="quantity-input" min="1" value="1" required="required">
+					<img class="quantity-up" src="http://tone.local/wp-content/themes/toneitup/src/images/g-nav-arrow-up.png">
+                  	<img class="quantity-down" src="http://tone.local/wp-content/themes/toneitup/src/images/g-nav-arrow.png">
+              </div>
+                <div id="product-add">
+        		  <input type="submit" name="add" id="add" class="primary button add-to-cart-button btn-action" value="{{ add_to_cart | escape }}">
+		        </div>
+				<div class="social-icons">
+					<img src="http://tone.local/wp-content/themes/toneitup/src/images/facebook.png">
+					<img src="http://tone.local/wp-content/themes/toneitup/src/images/twitter.png">
+					<img src="http://tone.local/wp-content/themes/toneitup/src/images/instagram.png">
+				</div>
+			</div>
+        {% if product.description != "" %}    
+        <div id="product-description" class="rte description" itemprop="description">
+          <span>DETAILS</span>
+          <div class="description-text">
+            {{ product.description }}
+          </div>
+          <a class="view-more">VIEW MORE</a>
+        </div>
+        {% endif %}
+
+        {% comment %}
+          All themes by Shopify should support the Product Reviews app out of the box.
+          https://apps.shopify.com/product-reviews
+        {% endcomment %}
+
+
+        
+
+        {% assign hide_default_title = false %}
+        {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+          {% assign hide_default_title = true %}
+        {% endif %}              
+
+        <div id="backorder" class="hidden">
+          <p>{{ '%s is back-ordered. We will ship it separately in 10 to 15 days.' | replace: '%s', '<span id="selected-variant"></span>' }}</p>
+        </div>
+
+      </div><!-- .product-details -->
+
+    </form>
+	
+  </section>
+   
+  {% include 'related-products' %}
+  
+	<section class="product-reviews">
+		<p>REVIEWS<br>
+      </p>
+		<ul>
+			<li class="review-empty review">
+				<div class="review-body">
+				    <div class="reviews" id="shopify-product-reviews" data-id="{{ product.id }}">
+                    	{{ product.metafields.spr.reviews }}
+	          		</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+
+
+
+{% comment %}
+  Adding support for product options. See here for details:  
+  http://docs.shopify.com/support/your-website/themes/can-i-make-my-theme-use-products-with-multiple-options
+{% endcomment %}
+
+<script>
+  
+var selectCallback = function(variant, selector) {
+
+  if (variant) {
+    
+    // Swap image.
+    if (variant.featured_image) {
+      var newImage = variant.featured_image; // New image object.
+      var mainImageDomEl = jQuery('.product-photo-container img')[0]; // DOM element of main image we need to swap.
+      Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+    }
+    
+    // Selected a valid variant that is available.
+    if (variant.available) {
+          
+      // Enabling add to cart button.
+      jQuery('#add').removeClass('disabled').prop('disabled', false).val({{ add_to_cart | json }});
+    
+      // If item is backordered yet can still be ordered, we'll show special message.
+      if (variant.inventory_management && variant.inventory_quantity <= 0) {
+        jQuery('#selected-variant').html({{ product.title | json }}{% unless hide_default_title %} + ' - ' + variant.title{% endunless %});
+        jQuery('#backorder').removeClass("hidden");
+      } else {
+        jQuery('#backorder').addClass("hidden");
+      }
+      
+    } else {
+      // Variant is sold out.
+      jQuery('#backorder').addClass('hidden');
+      jQuery('#add').val({{ sold_out | json }}).addClass('disabled').prop('disabled', true);       
+    }
+    
+    // Whether the variant is in stock or not, we can update the price and compare at price.
+    if ( variant.compare_at_price > variant.price ) {
+      jQuery('#product-price').html('<span class="product-price on-sale">'+ Shopify.formatMoney(variant.price, "{{ shop.money_format }}") +'</span>'+'&nbsp;<s class="product-compare-price">'+Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}")+ '</s>');
+    } else {
+      jQuery('#product-price').html('<span class="product-price">'+ Shopify.formatMoney(variant.price, "{{ shop.money_format }}") + '</span>' );
+    }        
+
+  } else {
+    // variant doesn't exist.
+    jQuery('#product-price').empty();
+    jQuery('#backorder').addClass('hidden');
+    jQuery('#add').val({{ unavailable | json }}).addClass('disabled').prop('disabled', true);
+  }
+
+};
+  
+jQuery(function($) {
+
+  new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
+  
+  // Add label if only one product option and it isn't 'Title'.
+  {% if product.options.size == 1 and product.options.first != 'Title' %}
+    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
+  {% endif %}
+
+});
+
+Shopify.Image.preload({{ product.images | json }}, 'grande');
+Shopify.Image.preload({{ product.images | json }}, '1024x1024');
+
+</script>

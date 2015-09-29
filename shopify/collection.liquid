@@ -1,0 +1,153 @@
+{% assign base_asset_url = "http://alpha.community.toneitup.com/wp-content/themes/toneitup/src/images/" %}
+
+<div id="shop-products-wrapper">
+
+	<div class="shop-main-carousel swiper-container shop-carousel-large" style="background-image: url({{ base_asset_url }}shop-hero-image2.png)" id="collections-carousel">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="{{ base_asset_url }}shop-hero-image2.png">
+				<div class="main-carousel-text-container">
+					<p class="headline">Ocean-kissed and<br> tousled beach waves</p>
+					<h2 class="title">K+K Sea Salt Texture Spray</h2>
+					<span class="price">$22</span>
+					<a class="cta">LEARN MORE</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<img src="{{ base_asset_url }}shop-hero-image2.png">
+				<div class="main-carousel-text-container">
+					<p class="headline">Ocean-kissed and<br> tousled beach waves</p>
+					<h2 class="title">K+K Sea Salt Texture Spray</h2>
+					<span class="price">$22</span>
+					<a class="cta">LEARN MORE</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<img src="{{ base_asset_url }}shop-hero-image2.png">
+				<div class="main-carousel-text-container">
+					<p class="headline">Ocean-kissed and<br> tousled beach waves</p>
+					<h2 class="title">K+K Sea Salt Texture Spray</h2>
+					<span class="price">$22</span>
+					<a class="cta">LEARN MORE</a>
+				</div>
+			</div>
+		</div>
+		<!-- If we need pagination -->
+	    <div class="swiper-pagination large" id="collections-carousel-pagination"></div>
+	    
+	    <!-- If we need navigation buttons -->
+	    <div class="swiper-button-prev left-arrow large" id="collections-carousel-prev"></div>
+	    <div class="swiper-button-next right-arrow large" id="collections-carousel-next"></div>
+			
+	</div>
+	<div class="products-nav-container">
+      {% include 'products-nav' %}
+      
+      <div class="sort-filter">
+        <span>SORT BY:</span><br>
+        <span>POPULAR</span>
+        <img src="{{ base_asset_url }}caret-drop-up.png">
+      </div>
+   </div>
+
+<section class="card-carousel upper container">
+  {% comment %}
+    Important notes about pagination:
+    - Never access collection.products before the opening paginate tag.
+    - Never paginate by more than 50.
+  {% endcomment %}
+
+  {% assign products_per_page = settings.products_per_row | times: settings.number_of_rows %}
+  {% assign numbers = 'zero, one, two, three, four, five, six' | split: ',' %}
+  {% assign products_per_row = settings.products_per_row | times: 1 %}
+  {% assign products_per_row = numbers[products_per_row] | strip | append: '-per-row' %}
+
+  {% paginate collection.products by products_per_page %}
+
+  {% comment %}
+    Re-use the .rte class wherever you output content that was added by a merchant using
+    the Rich Text Editor ( 'rte' stands for rich text editor ).
+    Style all HTML elements in that content the same way across the board.
+    Use the .rte class in your CSS to help maintain consistency.
+    Example: the h2 element should have the same size and color in:
+    - product descriptions
+    - collection descriptions
+    - page content
+    - blog post
+  {% endcomment %}
+
+
+  {% comment %}
+    Collection sorting. Needs the JavaScript that is at the bottom of this file.
+  {% endcomment %}
+
+  {% comment %}
+    Listing all tags within the current collection.
+    Shopify uses product tags to manage subcategories inside collections.
+    See 'How do I create subcategories of products?' at 
+    http://bit.ly/1j1Dti4 for details.
+  {% endcomment %}
+
+  {% if collection.description.size > 0 %}
+  <div class="rte clearfix">
+    {{ collection.description }}
+  </div>
+  {% endif %}
+	<div class="row">
+<!--     <ul class="grid clearfix"> -->
+    {% for product in collection.products limit:3 %}
+      {% include 'product-grid-item' with products_per_row %}
+    {% else %}
+      <p>There are no products in this view.</p>
+    {% endfor %}
+<!--     </ul> -->
+    </div>
+  {% endpaginate %}
+</section>
+	
+	<section class="nutrition-plan-hero">
+    	<span class="hero"><img src="{{ base_asset_url }}nutrition-hero.jpg"></span>
+    	<div class="cta-wrapper"> 
+	        <div class="logo"><img src="{{ base_asset_url }}g-header-logo.png"></div>
+	        <h1>Nutrition Plan</h1>
+	        <p>Discover 50+ more Snack recipes like this one in our Nutrition Plan!</p>
+	        <div class="btn-action">JOIN THE NUTRITION PLAN</div>
+	    </div>   
+    </section>
+
+    <section class="card-carousel lower container">
+	
+    <div class="row">
+<!--       <ul class="grid clearfix"> -->
+      {% for product in collection.products offset:4 %}
+        {% include 'product-grid-item' with products_per_row %}
+      {% else %}
+        <p>There are no products in this view.</p>
+      {% endfor %}
+<!--       </ul> -->
+     </div>
+      
+        {% if paginate.pages > 1 %}
+  <div class="pagination centered">
+    {{ paginate | default_pagination }}
+  </div>
+  {% endif %}
+      
+	</section>
+
+</div>
+
+
+
+
+{% comment %}
+  JavaScript for collection sorting.
+{% endcomment %}
+<script>
+jQuery('.sort-by')
+  .val('{{ collection.sort_by | default: collection.default_sort_by }}')
+  .on('change', function() {
+    Shopify.queryParams.sort_by = jQuery(this).val();
+    location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+  });
+</script>

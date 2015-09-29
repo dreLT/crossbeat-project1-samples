@@ -1,0 +1,156 @@
+{% comment %}
+  Re-use the 'rte' class wherever you output content that was added by a merchant using the Rich Text Editor ( 'rte' stands for rich text editor ).
+  Style all HTML elements in that content the same way across the board.
+  Use the 'rte' class in your CSS to help maintain that consistency.
+  Example: the h2 element should have the same size and color in:
+  - product descriptions
+  - collection descriptions
+  - page content
+  - blog posts
+{% endcomment %}
+
+{% comment %}
+  Very important reading:
+  http://docs.shopify.com/themes/liquid-basics/what-is-true-and-false-in-liquid
+  Learn how to read theme settings in your theme.
+{% endcomment %}
+
+{% unless settings.homepage_page == blank or pages[settings.homepage_page].empty? %}
+{% assign page = pages[settings.homepage_page] %}
+{% assign base_asset_url = "http://alpha.community.toneitup.com/wp-content/themes/toneitup/src/images/" %}
+<div class="rte grid-margins">
+<!--   {{ page.content }} -->
+  <div id="static-wrapper" class="shop">
+
+	<!-- Slider main container -->
+	<div data-slides-num="1" class="tiu-carousel shop-main-carousel swiper-container shop-carousel-large" id="shop-home-large-carousel">
+	    <!-- Additional required wrapper -->
+	    <div class="swiper-wrapper">
+	        <!-- Slides -->
+	        <div class="swiper-slide" style="background-image: url({{ base_asset_url }}beach.png);">
+	        	<div class="main-carousel-text-container">
+<!-- 					<img class="slide-image" src="{{ base_asset_url }}beach.png"> -->
+					<p class="headline">Perfect Bikini Body<br> This Summer</p>
+					<img id="logo-alt" class="logo" src="{{ base_asset_url }}logo-large.png">
+					<h2 class="title">BIKINI SERIES</h2>
+					<a class="cta">JOIN TODAY</a>
+					<span>WANT TO LEARN HOW IT WORKS?</span>
+					<a>CLICK HERE</a>
+				</div>
+			</div>
+			<div class="swiper-slide" style="background-image: url({{ base_asset_url }}shop-main-carousel2.jpg);">
+	        	<div class="main-carousel-text-container right">
+<!-- 					<img class="slide-image" src="{{ base_asset_url }}shop-main-carousel2.jpg"> -->
+					<p class="headline">Perfect Bikini Body<br> This Summer</p>
+					<img id="logo-alt" class="logo" src="{{ base_asset_url }}logo-large.png">
+					<h2 class="title">BIKINI SERIES</h2>
+					<a class="cta">JOIN TODAY</a>
+					<span>WANT TO LEARN HOW IT WORKS?</span>
+					<a>CLICK HERE</a>
+				</div>
+			</div>
+	    </div>
+	    <!-- If we need pagination -->
+	    <div class="swiper-pagination large" id="shop-home-large-carousel-pagination"></div>
+	    
+	    <!-- If we need navigation buttons -->
+	    <div class="swiper-button-prev large left-arrow" id="shop-home-large-carousel-prev"></div>
+	    <div class="swiper-button-next large right-arrow" id="shop-home-large-carousel-next"></div>
+	</div>
+   
+    
+	<section class="card-carousel">
+		<heading>TODAY'S TOP PICS</heading>
+		<div data-slides-num="3" data-space-between="30" class="tiu-carousel shop-carousel-small small1 swiper-container" id="shop-home-small-carousel1">
+			<div class="swiper-wrapper">
+				{% for product in collections.top-pics.products limit:9 %}
+              	<a class="card card1 swiper-slide" href="{{ product.url }}">
+					<div class="card-image" style="background-image: url('{{ product.featured_image | img_url: 'large' }}');"></div>
+					<div class="card-info-container">
+						<h1 class="title">{{ product.title }}</h1>
+						<span class="price">{{ product.price | money }}</span>
+					</div>
+				</a>
+              	{% endfor %}
+			</div>
+			<div class="navigation">
+				<span class="left-arrow swiper-button-prev" id="shop-home-small-carousel1-prev"></span>
+				
+					<div class="swiper-pagination" id="shop-home-small-carousel1-pagination"></div>
+
+				<span class="right-arrow swiper-button-next" id="shop-home-small-carousel1-next"></span>
+			</div>
+		</div>
+	</section>
+    
+    <section class="card-carousel">
+		<heading>RECOMMENDED FOR YOU</heading>
+		<div data-slides-num="3" data-space-between="30" class="tiu-carousel shop-carousel-small small1 swiper-container" id="shop-home-small-carousel2">
+			<div class="swiper-wrapper">
+				{% for product in collections.featured-products.products %}
+              	<a class="card card1 swiper-slide" href="{{ product.url }}">
+					<div class="card-image" style="background-image: url('{{ product.featured_image | img_url: 'large' }}');"></div>
+					<div class="card-info-container">
+						<h1 class="title">{{ product.title }}</h1>
+						<span class="price">{{ product.price | money }}</span>
+					</div>
+				</a>
+              	{% endfor %}
+			</div>
+			<div class="navigation">
+				<span class="left-arrow swiper-button-prev" id="shop-home-small-carousel2-prev"></span>
+				
+					<div class="swiper-pagination" id="shop-home-small-carousel2-pagination"></div>
+
+				<span class="right-arrow swiper-button-next" id="shop-home-small-carousel2-next"></span>
+			</div>
+		</div>
+	</section>
+	
+	<section class="success-stories">
+		<heading>HEAR OUR SUCCESS STORIES</heading>
+		<div class="background">
+			<div class="text-container">
+				<div class="background-name">MEET<br> AMANDA</div>
+				<p class="background-quote">"The best part about the Tone It Up Nutrition Plan was that by the 3rd day I felt different (thinner, less bloated, more energy)"</p>
+				<a class="background-cta">HEAR HER SUCCESS STORY</a>
+			</div>
+		</div>
+		<ul class="people-list">
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+			<li class="person">
+				<a class="person-image" style="background-image: url('{{ base_asset_url }}g-meet-thumb-small.png');"></a>
+				<a class="person-name">KARA</a>
+			</li>
+		</ul>
+	</section>
+</div>
+</div>
+{% endunless %}

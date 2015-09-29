@@ -1,0 +1,138 @@
+#shop-products-wrapper {
+	background-color: #fff;
+	.shop-main-carousel {
+		height: $hero-height;
+       	min-height:#{$hero-min-height}; 
+		margin-bottom: 0;
+		background-size: cover;
+		background-position: center;
+		.main-carousel-text-container {
+			position: absolute;
+			top: 4vw;
+			right: 5vw;
+			padding: 5vw;
+			.title {
+				letter-spacing: 0;
+				margin-bottom: 0;
+				line-height: 1;
+				margin-top: 2vw;
+			}
+			.headline {
+				margin-bottom: .7vw;
+			}
+			.price {
+				display: block;
+			}
+			.title, .price {
+				font-size: 18px;
+			}
+			.cta {
+				width: 182px;
+				background-color: transparent;
+				border: 1px solid #02C6D8;
+				color: #02C6D8;
+				padding: 13px 28px;
+				height: 42px;
+				margin-top: 4vw;
+				margin-bottom: 1vw;
+			}
+		}
+	}
+
+	.products-nav-container {
+		position: relative;
+		font-size: 12px;
+		nav {
+			position: relative;
+			float: none;
+			width: 87.5%;
+			margin: 2.3% auto 2.4%;
+			text-transform: uppercase;
+			ul {
+				text-align: center;
+				li {
+					display: inline-block;
+					margin-right: 33px;
+					cursor: pointer;
+					height: 24px;
+					a {
+						color: #000;
+						&:hover {
+							color: $turquoise;
+							background-image: url(/wp-content/themes/toneitup/src/images/g-nav-arrow.png);
+						    background-repeat: no-repeat;
+						    background-position: 50% 90%;
+						    background-color: transparent;
+						}
+					}
+				}
+			}
+		}
+		.sort-filter {
+			position: absolute;
+			right: 6%;
+			top: 34%;
+			width: 11%;
+			cursor: pointer;
+			span:first-of-type {
+				color: $med-gray;
+			}
+			img {
+				position: absolute;
+				top: 2px;
+				right: 10px;
+			}
+		}
+	}
+
+	
+
+	.card-carousel {
+		overflow: hidden;
+		margin-bottom: 0;
+		ul:nth-of-type(3n) {
+			li {
+				margin-right: 0;
+			}
+		}
+		&.upper {
+			ul {
+				margin-bottom: 0;
+			}
+		}
+		ul {
+			overflow: hidden;
+			border: none;
+			float: left;
+			margin-right: 0;
+			background-color: transparent;
+			li {
+				border: 1px solid rgba(155,155,155,.5);
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+// Media
+
+@media (max-width: 991px) {
+	#shop-products-wrapper .card-carousel {
+		&.upper .row {
+			ul {
+				margin-bottom: 5.3%;
+			}
+			ul:nth-of-type(3) {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#shop-products-wrapper .card-carousel {
+		ul {
+			float: none;
+		}
+	}
+}
